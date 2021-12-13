@@ -2,6 +2,7 @@
     --main-color: #1a1a1a;
     --hover-color: #7DCEA0;
 }
+
 body {
     box-sizing: border-box;
     padding: 0;
@@ -20,6 +21,12 @@ header {
     align-items: center;
     background-image: linear-gradient(rgba(213, 207, 207, 0.4) 0%, rgb(255, 255, 255) 100%);
 }
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
 header h1 {
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -34,28 +41,27 @@ header h1 {
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .main-nav ul li {
     margin-left: 30px;
     padding-bottom: 10px;
     border-bottom: 5px solid var(--main-color);
 }
+
 .main-nav ul li:hover{
     border-bottom: 5px solid var(--hover-color);
 }
-.main-nav ul li a {
-    text-decoration: none;
-    color: var(--main-color);
-}
 
 .cover-photo {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/van.jpg');
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/background-code.jpg');
     background-size: cover;
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     box-shadow: -4px -2px 50px 25px rgba(0, 0, 0, 0.5);
 }
+
 .cover-photo h2 {
     font-weight: lighter;
     margin-right: 15px;
@@ -64,21 +70,22 @@ header h1 {
     color: white;
     background-color: var(--hover-color);
 }
+
 .main-content {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;  
     align-items: center;
     width: 100%;
-   
-
 }
+
 .title {
-    width: 25%;
+    width: 30%;
     font-size: 150%; 
     height: 200px;
     display: flex;
@@ -87,34 +94,148 @@ header h1 {
     margin: 10px 0;
 
 }
+
 .content {
-    width: 75%;
+    width: 70%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     padding: 30px;
     border-left: 5px solid var(--main-color);
 }
+
 .work-content {
+    width: 70%;
     display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    border-left: 5px solid var(--main-color);
 }
+
 .work-links {
-    background-color: slateblue;
+    display: inline-block;
+    background: #3794fe;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 16px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    box-shadow: 2px 2px 50px 40px rgba(0,0,0,0.40);
+}
+
+.work-links:first-child {
+    width: 95%;
     height: 400px;
-    width: 495px;
-    margin: 5px;
-    flex-grow: 1;
-    flex-shrink: 2;
 }
-.main-job {
-    flex-grow: 2;
-    order: 1;
+
+.work-links:not(:first-child) {
+    flex: 1;
 }
+
+.work-links h2 {
+    margin: 0;  
+}
+
+.work-links p {
+     font-size: 80%;
+     margin: 0;
+}
+
+.work-links:hover {
+    opacity: 0.5;
+}
+
+.job-1 {
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/water-droplets.jpg');
+    background-size: cover;
+}
+
+.job-2 {
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/code-screen.jpg');
+    background-size: cover;
+}
+
+.job-3 {
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/code-foot.jpg');
+    background-size: cover;
+}
+
+.job-4 {
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/no-bad-days.jpg');
+    background-size: cover;
+}
+
+.job-5 {
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/screens.jpg');
+    background-size: cover;
+}
+
 .footer-content {
     display: flex;
     justify-content: space-around;
 }
 
+.footer-content p {
+    border-bottom: 3px solid var(--main-color);
+}
+
+.footer-content p:hover{
+    border-bottom: 3px solid var(--hover-color);
+}
+@media screen and (max-width: 1350px){
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;  
+        align-items: center;
+        width: 100%;
+    }
+    .content {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        border-top: 5px solid var(--main-color);
+        border-left: none;
+    }
+    .work-content {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 30px;
+        border-top: 5px solid var(--main-color);
+        border-left: none;
+    }
+    .work-links {
+        display: inline-block;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 12px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        color: white;
+    }
+    
+    .work-links:first-child {
+        width: 92%;
+        height: 200px;
+    }
+    
+    .work-links:not(:first-child) {
+        flex: 1;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+    }
+}
 
