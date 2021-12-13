@@ -150,12 +150,12 @@ header h1 {
 }
 
 .job-1 {
-    background-image: url('/assets/images/water-droplets.jpg');
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/water-droplets.jpg');
     background-size: cover;
 }
 
 .job-2 {
-    background-image: url('./assets/images/code-screen.jpg');
+    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/code-screen.jpg');
     background-size: cover;
 }
 
