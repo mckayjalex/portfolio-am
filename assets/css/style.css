@@ -53,7 +53,7 @@ header h1 {
 }
 
 .cover-photo {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/background-code.jpg');
+    background-image: url('../images/background-code.jpg');
     background-size: cover;
     height: 500px;
     display: flex;
@@ -150,27 +150,27 @@ header h1 {
 }
 
 .job-1 {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/water-droplets.jpg');
+    background-image: url('../images/water-droplets.jpg');
     background-size: cover;
 }
 
 .job-2 {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/code-screen.jpg');
+    background-image: url('../images/code-screen.jpg');
     background-size: cover;
 }
 
 .job-3 {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/code-foot.jpg');
+    background-image: url('../images/code-foot.jpg');
     background-size: cover;
 }
 
 .job-4 {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/no-bad-days.jpg');
+    background-image: url('../images/no-bad-days.jpg');
     background-size: cover;
 }
 
 .job-5 {
-    background-image: url('/Users/chaz/Bootcamp/week2/portfolio-am/assets/images/screens.jpg');
+    background-image: url('../images/screens.jpg');
     background-size: cover;
 }
 
