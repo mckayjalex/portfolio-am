@@ -1,9 +1,9 @@
-
+/* My main color variables  */
 :root {
     --main-color: #1a1a1a;
     --hover-color: #7DCEA0;
 }
-
+/* Adding general styling for the whole visable document */
 body {
     box-sizing: border-box;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     text-transform: uppercase;
     background-color: whitesmoke;
 }
-
+/* Adding styling to the header at the top of the page */
 header {
     padding: 30px;
     max-height: 50px;
@@ -22,19 +22,18 @@ header {
     align-items: center;
     background-image: linear-gradient(rgba(213, 207, 207, 0.4) 0%, rgb(255, 255, 255) 100%);
 }
-
+/* Removing underline from all links */
 a {
     text-decoration: none;
     color: var(--main-color);
 }
-
+/* Makes heading bigger but removes bold */
 header h1 {
-    text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 300%;
     font-weight: lighter;
 }
-
+/* Styling for the nav bar */
 .main-nav ul {
     list-style-type: none;
     display: flex;
@@ -42,17 +41,17 @@ header h1 {
     padding-left: 10px;
     padding-right: 10px;
 }
-
+/* Adding color for the links */
 .main-nav ul li {
     margin-left: 30px;
     padding-bottom: 10px;
     border-bottom: 5px solid var(--main-color);
 }
-
+/* Adding hover color */
 .main-nav ul li:hover{
     border-bottom: 5px solid var(--hover-color);
 }
-
+/* Adding cover photo and shadow at top and bottom */
 .cover-photo {
     background-image: url('../images/background-code.jpg');
     background-size: cover;
@@ -62,7 +61,7 @@ header h1 {
     align-items: flex-end;
     box-shadow: -4px -2px 50px 25px rgba(0, 0, 0, 0.5);
 }
-
+/* Adding styling for the developer portfolio heading */
 .cover-photo h2 {
     font-weight: lighter;
     margin-right: 15px;
@@ -71,12 +70,12 @@ header h1 {
     color: white;
     background-color: var(--hover-color);
 }
-
+/* Adding margin to the main content area */
 .main-content {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+/* Adding display flex to each row */
 .row {
     display: flex;
     flex-direction: row;
@@ -84,7 +83,7 @@ header h1 {
     align-items: center;
     width: 100%;
 }
-
+/* Adds styling for the title of each section */
 .title {
     width: 30%;
     font-size: 150%; 
@@ -95,7 +94,7 @@ header h1 {
     margin: 10px 0;
 
 }
-
+/* Adds styling for the content part of each section */
 .content {
     width: 70%;
     display: flex;
@@ -103,7 +102,7 @@ header h1 {
     padding: 30px;
     border-left: 5px solid var(--main-color);
 }
-
+/* States the difference in styling for the work content sections */
 .work-content {
     width: 70%;
     display: flex;
@@ -112,10 +111,9 @@ header h1 {
     padding: 30px;
     border-left: 5px solid var(--main-color);
 }
-
+/* Adds styling to eacj of the work boxes */
 .work-links {
     display: inline-block;
-    background: #3794fe;
     border-radius: 6px;
     padding: 20px;
     margin: 16px;
@@ -127,16 +125,16 @@ header h1 {
     color: white;
     box-shadow: 2px 2px 50px 40px rgba(0,0,0,0.40);
 }
-
+/* Adds the styling for the first work box to make it the whole width of the section */
 .work-links:first-child {
     width: 95%;
     height: 400px;
 }
-
+/* Adds styling for all work boxes that arent the first child */
 .work-links:not(:first-child) {
     flex: 1;
 }
-
+/* The 2 below moves he work box header and p into the bottom right corner */
 .work-links h2 {
     margin: 0;  
 }
@@ -145,36 +143,36 @@ header h1 {
      font-size: 80%;
      margin: 0;
 }
-
+/* Adds the fade when the work boxes are hovered over */
 .work-links:hover {
     opacity: 0.5;
 }
-
+/* Adds background image for the first work box */
 .job-1 {
     background-image: url('../images/water-droplets.jpg');
     background-size: cover;
 }
-
+/* Adds background image for the second work box */
 .job-2 {
     background-image: url('../images/code-screen.jpg');
     background-size: cover;
 }
-
+/* Adds background image for the third work box */
 .job-3 {
     background-image: url('../images/code-foot.jpg');
     background-size: cover;
 }
-
+/* Adds background image for the fourth work box */
 .job-4 {
     background-image: url('../images/no-bad-days.jpg');
     background-size: cover;
 }
-
+/* Adds background image for the five work box */
 .job-5 {
     background-image: url('../images/screens.jpg');
     background-size: cover;
 }
-
+/* The below adds the styling for the footer section */
 .footer-content {
     display: flex;
     justify-content: space-around;
@@ -187,6 +185,7 @@ header h1 {
 .footer-content p:hover{
     border-bottom: 3px solid var(--hover-color);
 }
+/* Adding the styling for all content when the screen is less then 1350px */
 @media screen and (max-width: 1350px){
     .row {
         display: flex;
@@ -195,6 +194,7 @@ header h1 {
         align-items: center;
         width: 100%;
     }
+
     .content {
         width: 70%;
         display: flex;
@@ -203,6 +203,7 @@ header h1 {
         border-top: 5px solid var(--main-color);
         border-left: none;
     }
+
     .work-content {
         width: 70%;
         display: flex;
@@ -213,6 +214,7 @@ header h1 {
         border-top: 5px solid var(--main-color);
         border-left: none;
     }
+
     .work-links {
         display: inline-block;
         border-radius: 6px;
@@ -234,6 +236,7 @@ header h1 {
     .work-links:not(:first-child) {
         flex: 1;
     }
+    
     .footer-content {
         display: flex;
         justify-content: space-around;
