@@ -1,79 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Portfolio</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        offwhite: '#f8f8f8',
+                        offgrey: '#A9A9A9',
+                        maingreen: '#2EBF36',
+                        lightgreen: '#1EB027'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
-    <header >
-        <h1>McKay</h1>
+    <header
+        class="shadow shadow-grey-400 p-4 bg-offwhite h-60 lg:h-40 w-full flex flex-col lg:flex-row justify-between items-center z-20">
+        <div class="flex flex-row items-center">
+            <img class="rounded-full h-36 shadow shadow-black-400" src="./assets/images/portrait.jpg"
+                alt="Self Portrait">
+            <h1 class="text-4xl hidden lg:block">McKay</h1>
+        </div>
         <nav class="main-nav">
-            <ul>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact-me">Contact Me</a></li>
-                <li><a href="/Users/chaz/Career/Resume-Alex-Mckay.docx" download>Resume</a></li>
+            <ul class="flex">
+                <li class="flex-1 mr-2">
+                    <a class="w-36 text-lg text-center block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
+                        href="#about-me">About Me</a>
+                </li>
+                <li class="flex-1 mr-2">
+                    <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
+                        href="#work" >Work</a>
+                </li>
+                <li class="flex-1 mr-2">
+                    <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
+                        href="#contact-me">Contact</a>
+                </li>
+                <li class="flex-1 mr-2">
+                    <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
+                        href="./assets/files/alex-mckay-resume.pdf" target="_blank">Resume</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <div class="cover-photo">
-        <h2>Developer Portfolio</h2>
-    </div>
-    <section class="main-content">
-       <div id="about-me" class="row">
-             <div class="title">
-                 <h2>About Me</h2>
-            </div>
-            <div class="content">
-                <p class="about-me">I am a 26 year old male who is curently learning Web Development at Adelaide Uni.
-                 I wish to develope my skills for the chance of employment within an agency and to 
-                 potentially tackle some freelance work in the meantime. 
-                 My goal is to travel the world and work from my laptop.
-                </p>
-            </div>
+    <section class="bg-[url('./assets/images/code-background.jpg')] h-40 lg:h-80 bg-cover flex justify-end items-end p-4">
+        <h2 class="bg-offgrey p-2 lg:p-4 rounded-xl text-md lg:text-2xl">Developer Portfolio</h2>
+    </section>
+    <section class="flex flex-col lg:flex-row mx-6 text-center lg:mx-24 pt-6 mb-12">
+        <div id="about-me" class="flex flex-col lg:flex-row h-40 items-center">
+            <h2 class="lg:w-1/4 text-center text-2xl pb-6 underline">About Me</h2>
+            <p class="lg:w-3/4">Hi my names Alex, I'm a 26 year old who is curently learning Web Development at the
+                university ofAdelaide.
+                I wish to develope my skills for the chance of employment within an agency and to
+                potentially tackle some freelance work in the meantime.
+                My goal is to travel the world and work from my laptop.
+            </p>
         </div>
-        <div id="work" class="row">
-            <div class="title">
-                <h2>Work</h2>
+        <div id="work" class="flex flex-col lg:flex-row items-center pt-20">
+            <h2 class="lg:w-1/4 text-center text-2xl underline pr-2">Work</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-white content-center pt-6 w-full lg:w-3/4">
+                <a href="https://mckayjalex.github.io/sort-a-meal/" target="_blank"
+                    class="text-sm lg:text-lg text-black bg-cover bg-[url('./assets/images/sort-a-meal-webpage.png')] p-4 rounded-xl shadow cursor-pointer shadow hover:opacity-50 bg-center h-36 lg:h-96 text-right flex justify-end items-end">
+                    <div>
+                        <h2 class="font-bold">Sort A Meal</h2>
+                        <p>Javascript / Tailwind / APIs</p>
+                    </div>
+                </a>
+                <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"
+                    class="text-sm lg:text-lg text-black lg:col-span-1 bg-cover bg-[url('./assets/images/code-quiz-webpage.png')] shadow p-4 h-36 lg:h-96 shadow cursor-pointer hover:opacity-50 rounded-xl bg-center text-right flex justify-end items-end">
+                    <div>
+                        <h2 class="font-bold">Code Quiz</h2>
+                        <p>Javascript</p>
+                    </div>
+                </a>
+                <a href="https://mckayjalex.github.io/weather-dashboard/" target="_blank"
+                    class="text-sm lg:text-lg text-black bg-[url('./assets/images/weather-dashboard-webpage.png')] shadow p-4 shadow cursor-pointer hover:opacity-50 rounded-xl bg-cover bg-center h-36 lg:h-96 flex text-right justify-end items-end">
+                    <div>
+                        <h2 class="font-bold">Weather Dashboard</h2>
+                        <p>Jquery / Moment.js</p>
+                    </div>
+                </a>
+                <a href="https://mckayjalex.github.io/Work-day-scheduler/" target="_blank"
+                    class="text-sm lg:text-lg text-black bg-[url('./assets/images/workday-webpage.png')] cursor-pointer shadow hover:opacity-50 p-4 shadow rounded-xl bg-cover bg-center h-36 lg:h-96 flex text-right justify-end items-end">
+                    <div>
+                        <h2 class="font-bold">Work Day Scheduler</h2>
+                        <p>Javascript</p>
+                    </div>
+                </a>
             </div>
-            <div class="work-content">
-                <a href="https://mckayjalex.github.io/week1-homework/" target="_blank" class="work-links job-1">
-                    
-                    <h2>Horiseon</h2>
-                    <p>html / css</p>
-                </a>
-                <a href="" class="work-links job-2">
-                    <h2>Code Two</h2>
-                    <p>html / css</p>
-                </a>
-                <a href="" class="work-links job-3">
-                    <h2>Code Three</h2>
-                    <p>html / css</p>
-                </a>
-                <a href="" class="work-links job-4">
-                    <h2>Code Four</h2>
-                    <p>html / css</p>
-                </a>
-                <a href="" class="work-links job-5">
-                    <h2>Code Five</h2>
-                    <p>html / css</p>
-                </a>
-            </div>
-        </div>
-        <footer id="contact-me" class="row">
-            <div class="title">
-                <h2 >Contact Me</h2>
-            </div>
-            <div class="content footer-content">   
-                <p><a href="">0436857403</a></p>
-                <p><a href="">alexjosephmckay@gmail.com</a></p>
-                <p><a href="https://github.com/mckayjalex" target="_blank">GitHub</a></p>
-                <p><a href="https://www.linkedin.com/in/alex-mckay-148569222/" target="_blank">Linkdin</a></p>
-            </div>
-        </footer>
-    </section> 
+    </section>
+    <footer id="contact-me" class="text-xl flex flex-col lg:flex-row justify-around lg:h-20 items-center bg-offwhite">
+        <p class="p-2">0436 857 403</p>
+        <p class="p-2">alexjosephmckay@gmail.com</p>
+        <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://github.com/mckayjalex" target="_blank">GitHub</a></p>
+        <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://www.linkedin.com/in/alex-mckay-148569222/"
+                target="_blank">Linkdin</a></p>
+    </footer>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
