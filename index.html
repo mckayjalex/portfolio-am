@@ -26,21 +26,49 @@
 
 <body>
     <header
-        class="shadow shadow-grey-400 p-4 bg-offwhite h-60 lg:h-40 w-full flex flex-col lg:flex-row justify-between items-center z-20">
+        class="shadow shadow-grey-400 p-4 bg-offwhite h-40 sm:h-60 lg:h-40 w-full flex flex-row sm:flex-col lg:flex-row justify-between items-center z-20">
         <div class="flex flex-row items-center">
             <img class="rounded-full h-36 shadow shadow-black-400" src="./assets/images/portrait.jpg"
                 alt="Self Portrait">
-            <h1 class="text-4xl hidden lg:block">McKay</h1>
+            <h1 class="text-4xl uppercase pl-6 hidden lg:block">McKay</h1>
         </div>
-        <nav class="main-nav">
+        <button id="dropdownButton" data-dropdown-toggle="dropdownDivider"
+            class="sm:hidden text-white bg-offgrey hover:bg-gray-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+            type="button">Dropdown divider <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg></button>
+        <div id="dropdown"
+            class="hidden sm:hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+            <ul id="list" class="py-1" aria-labelledby="dropdownButton">
+                <li>
+                    <a href="#about-me"
+                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">About
+                        Me</a>
+                </li>
+                <li>
+                    <a href="#work"
+                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Work</a>
+                </li>
+                <li>
+                    <a href="#contact-me"
+                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Contact</a>
+                </li>
+                <li>
+                    <a href="./assets/files/alex-mckay-resume.pdf"
+                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Resume</a>
+                </li>
+            </ul>
+        </div>
+        <nav class="main-nav hidden sm:inline-block">
             <ul class="flex">
                 <li class="flex-1 mr-2">
-                    <a class="w-36 text-lg text-center block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
+                    <a class="w-36 text-md text-center block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
                         href="#about-me">About Me</a>
                 </li>
                 <li class="flex-1 mr-2">
                     <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
-                        href="#work" >Work</a>
+                        href="#work">Work</a>
                 </li>
                 <li class="flex-1 mr-2">
                     <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
@@ -53,56 +81,104 @@
             </ul>
         </nav>
     </header>
-    <section class="bg-[url('./assets/images/code-background.jpg')] h-40 lg:h-80 bg-cover flex justify-end items-end p-4">
+    <main id="main">
+    <section
+        class="bg-[url('./assets/images/code-background.jpg')] h-40 lg:h-80 bg-cover flex justify-end items-end p-4">
         <h2 class="bg-offgrey p-2 lg:p-4 rounded-xl text-md lg:text-2xl">Developer Portfolio</h2>
     </section>
     <section class="flex flex-col mx-6 text-center lg:mx-24 pt-6 mb-12">
         <div id="about-me" class="flex flex-col lg:flex-row h-40 items-center">
             <h2 class="lg:w-1/4 text-center text-2xl pb-6 underline">About Me</h2>
             <p class="lg:w-3/4">Hi my names Alex, I'm a 26 year old who is curently learning Web Development at the
-                university ofAdelaide.
+                university of Adelaide.
                 I wish to develope my skills for the chance of employment within an agency and to
                 potentially tackle some freelance work in the meantime.
                 My goal is to travel the world and work from my laptop.
             </p>
         </div>
+        <!-- Content section -->
         <div id="work" class="flex flex-col lg:flex-row items-center pt-20 lg:pt-0">
             <h2 class="lg:w-1/4 text-center text-2xl underline pr-2">Work</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-white content-center pt-6 w-full lg:w-3/4">
-                <a href="https://mckayjalex.github.io/sort-a-meal/" target="_blank"
-                    class="text-sm lg:text-lg text-black lg:col-span-2 bg-cover bg-[url('./assets/images/sort-a-meal-webpage.png')] p-4 rounded-xl shadow cursor-pointer shadow hover:opacity-50 bg-center h-36 lg:h-96 text-right flex justify-end items-end">
-                    <div>
-                        <h2 class="font-bold">Sort A Meal</h2>
-                        <p>Javascript / Tailwind / APIs</p>
+                <!-- Sort A Meal card -->
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full" src="./assets/images/sort-a-meal-webpage.png" alt="Sort A Meal Webpage">
+                    <div class="">
+                        <p class="pt-4 text-xs sm:text-base text-gray-700">
+                            HTML | CSS | Javascript | Tailwind | Google Places API
+                        </p>
                     </div>
-                </a>
-                <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"
-                    class="text-sm lg:text-lg text-black bg-cover bg-[url('./assets/images/code-quiz-webpage.png')] shadow p-4 h-36 lg:h-96 shadow cursor-pointer hover:opacity-50 rounded-xl bg-center text-right flex justify-end items-end">
-                    <div>
-                        <h2 class="font-bold">Code Quiz</h2>
-                        <p>Javascript</p>
+                    <div class="px-6 pt-4 pb-2">
+                        <a href="https://mckayjalex.github.io/sort-a-meal/" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
+                                Site</span></a>
+                        <a href="https://github.com/mckayjalex/sort-a-meal" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
+                                Repo</span></a>
                     </div>
-                </a>
-                <a href="https://mckayjalex.github.io/weather-dashboard/" target="_blank"
-                    class="text-sm lg:text-lg text-black bg-[url('./assets/images/weather-dashboard-webpage.png')] shadow p-4 shadow cursor-pointer hover:opacity-50 rounded-xl bg-cover bg-center h-36 lg:h-96 flex text-right justify-end items-end">
-                    <div>
-                        <h2 class="font-bold">Weather Dashboard</h2>
-                        <p>Jquery / Moment.js</p>
+                </div>
+                <!-- Code Quiz card -->
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full" src="./assets/images/code-quiz-webpage.png" alt="Code Quiz Webpage">
+                    <div class="pt-10">
+                        <p class="text-gray-700 text-xs sm:text-base">
+                            HTML | CSS | Javascript
+                        </p>
                     </div>
-                </a>
-                <a href="https://mckayjalex.github.io/Work-day-scheduler/" target="_blank"
-                    class="text-sm lg:text-lg text-black lg:col-span-2 bg-[url('./assets/images/workday-webpage.png')] cursor-pointer shadow hover:opacity-50 p-4 shadow rounded-xl bg-cover bg-center h-36 lg:h-96 flex text-right justify-end items-end">
-                    <div>
-                        <h2 class="font-bold">Work Day Scheduler</h2>
-                        <p>Javascript</p>
+                    <div class="px-6 pt-4 pb-2">
+                        <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
+                                Site</span></a>
+                        <a href="https://github.com/mckayjalex/code-quiz" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
+                                Repo</span></a>
                     </div>
-                </a>
+                </div>
+                <!-- Weather Dashboard card -->
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full" src="./assets/images/weather-dashboard-webpage.png"
+                        alt="Weather Dashboard Webpage">
+                    <div class="pt-4">
+                        <p class="text-gray-700 text-xs sm:text-base">
+                            HTML | CSS | Javascript | Open Weather API
+                        </p>
+                    </div>
+                    <div class="px-6 pt-4 pb-2">
+                        <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
+                                Site</span></a>
+                        <a href="https://github.com/mckayjalex/code-quiz" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
+                                Repo</span></a>
+                    </div>
+                </div>
+                <!-- Workday Scheduler card -->
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full" src="./assets/images/workday-webpage.png" alt="Workday Scheduler Webpage">
+                    <div class="pt-4">
+                        <p class="text-gray-700 text-xs sm:text-base">
+                            HTML | CSS | Javascript
+                        </p>
+                    </div>
+                    <div class="px-6 pt-4 pb-2">
+                        <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
+                                Site</span></a>
+                        <a href="https://github.com/mckayjalex/code-quiz" target="_blank"><span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
+                                Repo</span></a>
+                    </div>
+                </div>
+
+
             </div>
     </section>
+    </main>
     <footer id="contact-me" class="text-xl flex flex-col lg:flex-row justify-around lg:h-20 items-center bg-offwhite">
         <p class="p-2">0436 857 403</p>
         <p class="p-2">alexjosephmckay@gmail.com</p>
-        <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://github.com/mckayjalex" target="_blank">GitHub</a></p>
+        <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://github.com/mckayjalex"
+                target="_blank">GitHub</a></p>
         <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://www.linkedin.com/in/alex-mckay-148569222/"
                 target="_blank">Linkdin</a></p>
     </footer>
