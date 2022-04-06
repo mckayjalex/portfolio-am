@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -7,182 +7,370 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Portfolio</title>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        offwhite: '#f8f8f8',
-                        offgrey: '#A9A9A9',
-                        maingreen: '#2EBF36',
-                        lightgreen: '#1EB027'
+                    backgroundImage: {
+                        home: "url('./assets/images/home.jpg')",
+                        weather: "url('./assets/images/weather.jpg')",
+                        sortameal: "url('./assets/images/sortameal.jpg')",
+                        planner: "url('./assets/images/planner.jpg')",
+                        project: "url('./assets/images/project.jpg')",
+                        techblog: "url('./assets/images/techblog.jpg')",
+                        quiz: "url('./assets/images/quiz.jpg')"
+                    },
+                    fontFamily: {
+                        sanny: 'Open Sans'
                     }
                 }
             }
         }
     </script>
+    <style>
+        body {
+            background-color: rgba(31, 41, 55);
+            /* cool gray 800 */
+            color: white;
+        }
+
+        .one:hover span:last-child {
+            width: 100%;
+        }
+
+        .two:hover span {
+            width: 50%;
+        }
+
+        .three:hover span {
+            height: 100%;
+        }
+    </style>
 </head>
 
-<body>
-    <header
-        class="shadow shadow-grey-400 p-4 bg-offwhite h-40 sm:h-60 lg:h-40 w-full flex flex-row sm:flex-col lg:flex-row justify-between items-center z-20">
-        <div class="flex flex-row items-center">
-            <img class="rounded-full h-36 shadow shadow-black-400" src="./assets/images/portrait.jpg"
-                alt="Self Portrait">
-            <h1 class="text-4xl uppercase pl-6 hidden lg:block">McKay</h1>
-        </div>
-        <button id="dropdownButton" data-dropdown-toggle="dropdownDivider"
-            class="sm:hidden text-white bg-offgrey hover:bg-gray-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
-            type="button">Dropdown divider <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg></button>
-        <div id="dropdown"
-            class="hidden sm:hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-            <ul id="list" class="py-1" aria-labelledby="dropdownButton">
-                <li>
-                    <a href="#about-me"
-                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">About
-                        Me</a>
-                </li>
-                <li>
-                    <a href="#work"
-                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Work</a>
-                </li>
-                <li>
-                    <a href="#contact-me"
-                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Contact</a>
-                </li>
-                <li>
-                    <a href="./assets/files/resume-alex-mckay.pdf"
-                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Resume</a>
-                </li>
-            </ul>
-        </div>
-        <nav class="main-nav hidden sm:inline-block">
-            <ul class="flex">
-                <li class="flex-1 mr-2">
-                    <a class="w-36 text-md text-center block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
-                        href="#about-me">About Me</a>
-                </li>
-                <li class="flex-1 mr-2">
-                    <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
-                        href="#work">Work</a>
-                </li>
-                <li class="flex-1 mr-2">
-                    <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
-                        href="#contact-me">Contact</a>
-                </li>
-                <li class="flex-1 mr-2">
-                    <a class="text-center text-md block rounded hover:border-gray-200 hover:bg-offgrey py-2 px-4"
-                        href="./assets/files/resume-alex-mckay.pdf" target="_blank">Resume</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main id="main">
-    <section
-        class="bg-[url('./assets/images/code-background.jpg')] h-40 lg:h-80 bg-cover flex justify-end items-end p-4">
-        <h2 class="bg-offgrey p-2 lg:p-4 rounded-xl text-md lg:text-2xl">Developer Portfolio</h2>
-    </section>
-    <section class="flex flex-col mx-6 text-center lg:mx-24 pt-6 mb-12">
-        <div id="about-me" class="flex flex-col lg:flex-row h-40 items-center">
-            <h2 class="lg:w-1/4 text-center text-2xl pb-6 underline">About Me</h2>
-            <p class="lg:w-3/4">Hi my names Alex, I'm a 26 year old who is curently learning Web Development at the
-                university of Adelaide.
-                I wish to develope my skills for the chance of employment within an agency and to
-                potentially tackle some freelance work in the meantime.
-                My goal is to travel the world and work from my laptop.
-            </p>
-        </div>
-        <!-- Content section -->
-        <div id="work" class="flex flex-col lg:flex-row items-center pt-20 lg:pt-0">
-            <h2 class="lg:w-1/4 text-center text-2xl underline pr-2">Work</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-white content-center pt-6 w-full lg:w-3/4">
-                <!-- Sort A Meal card -->
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img class="w-full" src="./assets/images/sort-a-meal-webpage.png" alt="Sort A Meal Webpage">
-                    <div class="">
-                        <p class="pt-4 text-xs sm:text-base text-gray-700">
-                            HTML | CSS | Javascript | Tailwind | Google Places API
-                        </p>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <a href="https://mckayjalex.github.io/sort-a-meal/" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
-                                Site</span></a>
-                        <a href="https://github.com/mckayjalex/sort-a-meal" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
-                                Repo</span></a>
-                    </div>
-                </div>
-                <!-- Code Quiz card -->
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img class="w-full" src="./assets/images/code-quiz-webpage.png" alt="Code Quiz Webpage">
-                    <div class="pt-10">
-                        <p class="text-gray-700 text-xs sm:text-base">
-                            HTML | CSS | Javascript
-                        </p>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
-                                Site</span></a>
-                        <a href="https://github.com/mckayjalex/code-quiz" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
-                                Repo</span></a>
-                    </div>
-                </div>
-                <!-- Weather Dashboard card -->
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img class="w-full" src="./assets/images/weather-dashboard-webpage.png"
-                        alt="Weather Dashboard Webpage">
-                    <div class="pt-4">
-                        <p class="text-gray-700 text-xs sm:text-base">
-                            HTML | CSS | Javascript | Open Weather API
-                        </p>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
-                                Site</span></a>
-                        <a href="https://github.com/mckayjalex/code-quiz" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
-                                Repo</span></a>
-                    </div>
-                </div>
-                <!-- Workday Scheduler card -->
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img class="w-full" src="./assets/images/workday-webpage.png" alt="Workday Scheduler Webpage">
-                    <div class="pt-4">
-                        <p class="text-gray-700 text-xs sm:text-base">
-                            HTML | CSS | Javascript
-                        </p>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Live
-                                Site</span></a>
-                        <a href="https://github.com/mckayjalex/code-quiz" target="_blank"><span
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold hover:opacity-50 text-gray-700 mr-2 mb-2">Github
-                                Repo</span></a>
-                    </div>
-                </div>
-
-
+<body class="text-white font-sanny">
+    <!-- HOME -->
+    <header class="flex w-full justify-start bg-transparent absolute">
+        <div class="p-12 flex">
+            <button id="menuButton" class="text-2xl ml-1 cursor-pointer">III</button>
+            <div id="menu" class="hidden pl-6">
+                <a class="bg-gradient-to-r hover:from-red-400 hover:to-pink-900 rounded text-lg py-2 px-4"
+                    href="#about">About</a>
+                <a class="bg-gradient-to-r hover:from-red-400 hover:to-pink-900 rounded text-lg py-2 px-4"
+                    href="#work">Work</a>
+                <a class="bg-gradient-to-r hover:from-red-400 hover:to-pink-900 rounded text-lg py-2 px-4"
+                    href="#contact">Contact</a>
+                <a class="bg-gradient-to-r hover:from-red-400 hover:to-pink-900 rounded text-lg py-2 px-4"
+                    href="./assets/files/AlexMcKay.pdf" target="_blank">Resume</a>
             </div>
-    </section>
+        </div>
+    </header>
+    <main class="h-screen flex items-center justify-center bg-home bg-fixed bg-cover">
+        <div class="flex flex-col items-center">
+            <h1 class="text-6xl font-mono">Alex McKay</h1>
+            <p class="pl-24">"Just want to travel the world"</p><br>
+            <p>| FULL STACK DEVELOPER |</p>
+        </div>
     </main>
-    <footer id="contact-me" class="text-xl flex flex-col lg:flex-row justify-around lg:h-20 items-center bg-offwhite">
-        <p class="p-2">0436 857 403</p>
-        <p class="p-2">alexjosephmckay@gmail.com</p>
-        <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://github.com/mckayjalex"
-                target="_blank">GitHub</a></p>
-        <p class="p-2"><a class="p-2 rounded hover:bg-offgrey" href="https://www.linkedin.com/in/alex-mckay-148569222/"
-                target="_blank">Linkdin</a></p>
+    <!-- ABOUT -->
+    <section id="about"
+        class="h-screen bg-gradient-to-b from-red-400 bg-cover flex flex-col md:flex-row items-center p-24">
+        <h1 class="w-1/4 text-4xl flex justify-end underline underline-offset-4 pb-12 md:pr-12 ">About</h1>
+        <div>
+            <p class="w-full pb-12">Alex McKay is a 27yo from Adeliade South Autralia. Eager to jump into a life of
+                coding. He is currently half way through his studies of Computer Science at the University of
+                Adeliade.<br><br>Alex currenly works in aviation but upon completion of his course wishes to find a Full
+                Stack Developer job. <br><br>Please feel free to reach out in the contact section.</p>
+            <a href="#contact" class="md:mt-24 p-2 border-2 border-red-400 rounded-lg hover:bg-red-200">Contact Me</a>
+        </div>
+    </section>
+    <!-- WORK -->
+    <section id="work" class="h-screen bg-gradient-to-b from-red-400 bg-cover flex flex-col pt-12">
+        <section class="h-screen relative rounded-xl overflow-auto">
+            <!-- Contents -->
+            <div class="relative w-full flex gap-6 snap-x overflow-x-auto pb-14">
+                <div class="snap-center shrink-0">
+                    <div class="shrink-0"></div>
+                </div>
+                <div id="sortameal-btn" class="snap-center shrink-0 first:pl-8 last:pr-8 hover:scale-95 cursor-pointer">
+                    <img class="shrink-0 rounded-lg shadow-xl h-72" src="assets/images/sortameal.jpg">
+                </div>
+                <div id="planner-btn" class="snap-center shrink-0 first:pl-8 last:pr-8 hover:scale-95 cursor-pointer">
+                    <img class="shrink-0 rounded-lg shadow-xl h-72" src="assets/images/planner.jpg">
+                </div>
+                <div id="weather-btn" class="snap-center shrink-0 first:pl-8 last:pr-8 hover:scale-95 cursor-pointer">
+                    <img class="shrink-0 rounded-lg shadow-xl h-72" src="assets/images/weather.jpg">
+                </div>
+                <div id="quiz-btn" class="snap-center shrink-0 first:pl-8 last:pr-8 hover:scale-95 cursor-pointer">
+                    <img class="shrink-0 rounded-lg shadow-xl h-72" src="assets/images/quiz.jpg">
+                </div>
+                <div id="techblog-btn" class="snap-center shrink-0 first:pl-8 last:pr-8 hover:scale-95 cursor-pointer">
+                    <img class="shrink-0 rounded-lg shadow-xl h-72" src="assets/images/techblog.jpg">
+                </div>
+                <div id="guru-btn" class="snap-center shrink-0 first:pl-8 last:pr-8 hover:scale-95 cursor-pointer">
+                    <img class="shrink-0 rounded-lg shadow-xl h-72" src="assets/images/project.jpg">
+                </div>
+            </div>
+            <!-- SORTAMEAL INFO -->
+            <div id="sortameal-info"
+                class="hidden p-6 mb-6 w-3/4 bg-white mx-auto px-12 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="https://github.com/mckayjalex/sort-a-meal" target="_blank">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sortameal</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Simple Web application to help a user
+                    decide what to eact for dinner, lunch or breaky. Anytime of the day this app will let you select
+                    what type of food you would like and display all recipes or restuarants withing a 5km radius</p>
+                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technologies Used:
+                </h6>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HTML | CSS | TAILWIND CSS | GOOGLE PLACES
+                    API
+                    API | JS | JQUERY</p>
+                <div class="flex">
+                    <a href="https://github.com/mckayjalex/sort-a-meal" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        &ltcode&gt</a>
+                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                    <a href="https://mckayjalex.github.io/sort-a-meal/home.html" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Live Site
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- CODE QUIZ INFO -->
+            <div id="quiz-info"
+                class="hidden p-6 mb-6 w-3/4 bg-white mx-auto px-12 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="https://github.com/mckayjalex/code-quiz" target="_blank">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Code Quiz</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Code Quiz is a short and simple quiz game
+                    that asks a user 10 questions. The timer starts at 100 and slowly countsdown, be careful if you get
+                    a question wrong, the timer will jump down by 10.
+                    Upon completion you can save your score under a name to the computers local stoage.
+                </p>
+                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technologies Used:
+                </h6>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HTML | CSS | JS</p>
+                <div class="flex">
+                    <a href="https://github.com/mckayjalex/code-quiz" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        &ltcode&gt</a>
+                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                    <a href="https://mckayjalex.github.io/code-quiz/" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Live Site
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- GURU INFO -->
+            <div id="guru-info"
+                class="hidden p-6 mb-6 w-3/4 bg-white mx-auto px-12 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="https://github.com/AshWeston/PROJECT2" target="_blank">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Guru</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Guru is a work in progress. Its a project
+                    management app with the focus to help out others. With a option to post questions, a user can then
+                    recieve answers to those question an decide which answers were helpful, a helpful anwser will add a
+                    one to the users point system. Users can climb up the ranks to encourage working together</p>
+                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technologies Used:
+                </h6>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HTML | CSS | SORTABLE.JS | EXPRESS |
+                    SEQUELIZE | MYSQL | NODE.JS | JS </p>
+                <div class="flex">
+                    <a href="https://github.com/AshWeston/PROJECT2" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        &ltcode&gt</a>
+                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                    <a href="https://guru-heroku-deploy.herokuapp.com/" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Live Site
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- TECHBLOG INFO -->
+            <div id="techblog-info"
+                class="hidden p-6 mb-6 w-3/4 bg-white mx-auto px-12 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="https://github.com/mckayjalex/tech-blog" target="_blank">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tech Blog</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Techblog is a place where users can post
+                    projects and others users can comment on those posts. A Place to share and communicate about works.
+                </p>
+                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technologies Used:
+                </h6>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HTML | CSS | TAILWIND CSS | NODE.JS | MYSQL
+                    | EXPRESS | SEQUELIZE | JS | </p>
+                <div class="flex">
+                    <a href="https://github.com/mckayjalex/tech-blog" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        &ltcode&gt</a>
+                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                    <a href="#" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Live Site
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- WEATHER INFO -->
+            <div id="weather-info"
+                class="hidden p-6 mb-6 w-3/4 bg-white mx-auto px-12 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="https://github.com/mckayjalex/weather-dashboard" target="_blank">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Weather Dashboard
+                    </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Simple Web Application that allows a user
+                    to enter in a location and be presente with the current weather and a further 5 day forecast. User
+                    history will also be saved to the left and stay there upon reload of the page.</p>
+                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technologies Used:
+                </h6>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HTML | CSS | TAILWIND CSS | OPEN WEATHER
+                    API | JS | JQUERY</p>
+                <div class="flex">
+                    <a href="https://github.com/mckayjalex/weather-dashboard" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        &ltcode&gt</a>
+                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                    <a href="https://mckayjalex.github.io/weather-dashboard/" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Live Site
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- PLANNER INFO -->
+            <div id="planner-info"
+                class="hidden p-6 mb-6 w-3/4 bg-white mx-auto px-12 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="https://github.com/mckayjalex/Work-day-scheduler" target="_blank">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Workday Scheduler
+                    </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Workday Scheduler is a planner app to
+                    assist you with planning your daily tasks. A user can enter in info and upon click ot the save
+                    button, the data will be saved to the local stoage. Added an option to clear the entire planner
+                    without the need to destroy the local saved data manually.</p>
+                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technologies Used:
+                </h6>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HTML | CSS | JS | MOMENT.JS</p>
+                <div class="flex">
+                    <a href="https://github.com/mckayjalex/Work-day-scheduler" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        &ltcode&gt</a>
+                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                    <a href="https://mckayjalex.github.io/Work-day-scheduler/" target="_blank"
+                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-400 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Live Site
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- CONTACT / RESUME -->
+    <footer id="contact" class="text-center text-white" style="background-color: #f1f1f1;">
+        <div class="py-9">
+            <div class="flex justify-center">
+                <a href="mailto:alexanderjosephmckay@gmail.com"><img class="w-4 hover:text-white text-gray-800 mr-9"
+                        src="./assets/images/email.svg" alt="Email"></a>
+                <a target="_blank" href="https://www.linkedin.com/in/alex-mckayy/"
+                    class="mr-9 hover:text-white text-gray-800">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                        class="svg-inline--fa fa-linkedin-in w-3.5" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                        </path>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://github.com/mckayjalex" class="hover:text-white text-gray-800">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
+                        class="svg-inline--fa fa-github w-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 496 512">
+                        <path fill="currentColor"
+                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p class="pb-6 text-gray-800">+61 434 857 403</p>
     </footer>
-    <script src="./assets/js/script.js"></script>
 </body>
+<script src="./assets/js/menu.js"></script>
 
 </html>
