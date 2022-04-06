@@ -13,41 +13,31 @@ I will also be trying to keep my resume, linkinin and github all up to date.
 
 - [Screenshots](#screenshots) 
 - [Technologies](#technologies) 
-- [Installation](#installation)
 - [Resources](#resources) 
 - [Contact](#contact)
   
 ## Screenshots 
 ---
-Code
-![]()
+Home
+![Home](./assets/images/homepage.png)
 
-Page
-![]()
+Work
+![Work](./assets/images/workpage.png)
 
 ## Technologies
 ***
 A list of technologies used within the project:
 
-- Javascript
-- GIT
-- MySQL
+- JAVASCRIPT
 - HTML
 - CSS
-
-## Installation
-***
-To install and use this app please run the below in your CLI.
-```
-$ cd /Users/chaz/Bootcamp/week13/tech-blog/server.js
-$ npm install
-$ npm start
-```
-Note: This application is only a partial app and it can be tested using Insomnia.
-
+- TAILWIND CSS
+- 
 ## Resources
 
-[Github Repo](https://github.com/mckayjalex/portfolio)
+[Github Repo](https://github.com/mckayjalex/portfolio-am)
+
+[Live Site](https://mckayjalex.github.io/portfolio-am/)
 
 ## Contact
 
